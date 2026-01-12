@@ -1,0 +1,4 @@
+.list { display:flex; flex-direction:column; gap:1rem }
+.kid { display:flex; gap:1rem; align-items:center }
+.kid img { width:90px; height:90px; object-fit:cover; border-radius:8px }
+@media(min-width:900px){ .list { flex-direction:row } .kid { flex:1 } }

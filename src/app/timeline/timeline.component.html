@@ -1,0 +1,28 @@
+<div class="card">
+  <h2>22 Years — Timeline</h2>
+  <div class="timeline-wrapper">
+    <button class="nav left" aria-label="Previous" (click)="prev()">‹</button>
+    <div #scroller class="timeline-scroller" tabindex="0" (keydown)="onKey($event)">
+      <div *ngFor="let m of milestones" class="milestone-card">
+        <img [src]="m.img" 
+             alt="milestone image" 
+             (click)="openImageModal(m.img, m.text)"
+             class="milestone-image" />
+        <div class="meta">
+          <div class="year">{{m.year}}</div>
+          <p>{{m.text}}</p>
+        </div>
+      </div>
+    </div>
+    <button class="nav right" aria-label="Next" (click)="next()">›</button>
+  </div>
+
+  <!-- Image Modal -->
+  <div class="image-modal" *ngIf="selectedImage" (click)="closeImageModal()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <span class="close-btn" (click)="closeImageModal()">&times;</span>
+      <img [src]="selectedImage" [alt]="selectedImageText" class="modal-image" />
+      <div class="modal-caption">{{selectedImageText}}</div>
+    </div>
+  </div>
+</div>

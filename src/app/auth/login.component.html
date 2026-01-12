@@ -1,0 +1,18 @@
+<div class="card" style="max-width:420px;margin:1rem auto;">
+  <h2>Login (Mock)</h2>
+  <form (ngSubmit)="submit()">
+    <mat-form-field style="width:100%">
+      <mat-label>Username</mat-label>
+      <input matInput [formControl]="form.controls.username">
+    </mat-form-field>
+    <mat-form-field style="width:100%">
+      <mat-label>Password</mat-label>
+      <input matInput type="password" [formControl]="form.controls.password">
+    </mat-form-field>
+    <div style="margin-top:.5rem; color:crimson">{{error}}</div>
+    <div style="margin-top:1rem; display:flex; gap:.5rem;">
+      <button mat-raised-button color="primary" type="submit" style="background:var(--accent); color:#fff">Login</button>
+      <a mat-button routerLink="/">Cancel</a>
+    </div>
+  </form>
+</div>

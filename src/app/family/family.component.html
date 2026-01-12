@@ -1,0 +1,12 @@
+<div class="card">
+  <h2>Our Three Lights</h2>
+  <div class="list">
+    <div *ngFor="let k of kids" class="kid">
+      <img [src]="k.img" alt="{{k.name}}"/>
+      <div>
+        <strong>{{k.name}}</strong>
+        <p style="color:var(--muted)">{{k.note}}</p>
+      </div>
+    </div>
+  </div>
+</div>
